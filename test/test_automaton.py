@@ -1,6 +1,5 @@
 import pytest
 
-from src.automaton import Automaton
 from src.scoreCard import ScoreCard
 
 @pytest.mark.state_n
