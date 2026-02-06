@@ -1,7 +1,6 @@
 class ScoreCard:
     def __init__(self, scorecard):
         self.throws = self._parse_throws(scorecard)
-        self.frames = self._build_frames()  
 
     def _parse_throws(self, scorecard):
         throws = []
@@ -15,21 +14,6 @@ class ScoreCard:
             else:                      # pins knocked down
                 throws.append(int(symbol))
         return throws
-
-    def _build_frames(self):
-        frames = []
-        roll = 0
-        for frame in range(10):
-            if self.throws[roll] == 10:   # strike
-                frames.append([10])
-                roll += 1
-            else:
-                frames.append([self.throws[roll], self.throws[roll + 1]])
-                roll += 2
-        # Bonus throws in the 10th frame
-        if roll < len(self.throws):
-            frames[-1].extend(self.throws[roll:])
-        return frames
 
     def score(self):
         game_score = 0
