@@ -89,3 +89,6 @@ def test_spare_in_extra_roll():
 @pytest.mark.extra_rolls
 def test_triple_strike_before_extra_rolls():
     pins = "XXXXXXXXXXXX"
+    total = 300
+    score_card = ScoreCard(pins)
+    assert score_card.score() == total
