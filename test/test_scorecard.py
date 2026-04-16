@@ -89,10 +89,6 @@ def test_spare_in_extra_roll():
 @pytest.mark.extra_rolls
 def test_triple_strike_before_extra_rolls():
     pins = "XXXXXXXXXXXX"
-<<<<<<< HEAD:test/test_scorecard.py
     total = 300
     score_card = ScoreCard(pins)
-    automata.set_input(score_card)
-    assert automata.output() == total
-=======
->>>>>>> refactor:test/test_automaton.py
+    assert score_card.score() == total
